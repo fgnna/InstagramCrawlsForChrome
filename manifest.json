@@ -1,0 +1,30 @@
+﻿{
+    "manifest_version": 2,
+    "name": "我的时钟",
+    "version": "1.0",
+    "description": "我的第一个Chrome扩展",
+    "icons": {
+        "128": "images/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+           "128": "images/icon128.png"
+        },
+        "default_title": "我的时钟",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.instagram.com/*"],
+            "js": ["js/jquery-3.1.0.min.js","js/instagram_image_get.js"]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "js/task.js"
+        ]
+    },
+    "permissions": [
+        "https://www.instagram.com/*"
+    ]
+}
