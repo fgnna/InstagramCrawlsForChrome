@@ -12,7 +12,7 @@ def main():
 	keyNodeCode = "{nodecode}"
 	keyNodeTime = "{nodetime}"
 
-	keyUserNameListFileName = "./usernames"
+	keyUserNameListFileName = "c:/insImage/usernames"
 
 
 	#https://www.instagram.com/{username}/?__a=1
@@ -20,7 +20,7 @@ def main():
 	#https://www.instagram.com/p/{nodecode}/?__a=1
 	nodeUrl = "https://www.instagram.com/p/" + keyNodeCode + "/?__a=1"
 
-	originFilePath = "./" + keyUserName
+	originFilePath = "c:/insImage/" + keyUserName
 	nodeFilePath = originFilePath + "/" + keyNodeTime
 	imageFileName = nodeFilePath + "/" + keyNodeTime + ".jpg"
 
@@ -32,7 +32,6 @@ def main():
 
 	print usernameList
 
-	usernameList = ["ronaldinhooficial","manchesterunited"]
 	for j in range(len(usernameList)):
 	    page = urllib.urlopen(originInfoUrl.replace(keyUserName,usernameList[j]))
 	    jsonData = json.loads(page.read())
